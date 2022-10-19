@@ -1,0 +1,22 @@
+.create-employee-section {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.create-employee-section button {
+    margin-top: 20px;
+
+}
+
+
+
+label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 10px;
+}
+
+.address {
+    margin-top: 10px;
+}
