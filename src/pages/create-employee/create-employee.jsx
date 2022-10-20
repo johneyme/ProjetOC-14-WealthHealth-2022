@@ -5,9 +5,13 @@ import DropdownSelect from '../../components/dropdown-select/dropdown-select';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useState } from 'react';
+import Modal from '../../components/modal/modal';
+import saveEmployee from '../../utils/save-employee';
 
 function CreateEmployee() {
   const [startDate, setStartDate] = useState(new Date());
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <section className="create-employee-section">
       <h2>Create Employee</h2>
@@ -59,10 +63,13 @@ function CreateEmployee() {
         />
       </form>
 
-      <button>Save</button>
-      <div id="confirmation" className="modal">
-        Employee Created!
-      </div>
+      <button
+        className="primaryBtn "
+        onClick={() => saveEmployee(setIsOpen(true))}
+      >
+        Save
+      </button>
+      {isOpen && <Modal setIsOpen={setIsOpen} />}
     </section>
   );
 }

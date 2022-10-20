@@ -1,6 +1,13 @@
 .create-employee-section {
+    padding: 0 50px 50px 50px;
     display: flex;
     flex-direction: column;
+    width: 600px;
+    margin: auto;
+    border-radius: 5px;
+    border: 3px solid #94ad1852;
+    background-color: #71ad180f;
+    margin-bottom: 20px;
 
 }
 
@@ -19,4 +26,42 @@ label {
 
 .address {
     margin-top: 10px;
+
+}
+
+input {
+    border-radius: 25px;
+    height: 25px;
+    width: 200px;
+    border: none;
+    padding: 5px;
+    border: 1px solid #94ad1852;
+}
+
+select {
+    background-color: white;
+    border-radius: 25px;
+    height: 50px;
+    width: 250px;
+    border: none;
+    padding: 5px;
+}
+
+
+.primaryBtn {
+    margin: 20px 10px;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 13px 25px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: none;
+    color: white;
+    background: #185adb;
+    transition: all 0.25s ease;
+}
+
+.primaryBtn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
 }
