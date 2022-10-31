@@ -1,0 +1,13 @@
+{
+  "name": "modalextensionwh-p14",
+  "version": "1.0.0",
+  "description": "A simply and clean modal to form submit",
+  "main": "dist/index",
+"typings": "dist/index",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "johndevcode",
+  "license": "ISC"
+}

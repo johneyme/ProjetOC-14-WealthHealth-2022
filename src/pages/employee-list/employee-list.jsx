@@ -1,14 +1,19 @@
 import './employee-list.css';
 import DataTableComponent from '../../components/datatable/datable';
-
-const employees = JSON.parse(localStorage.getItem('employees'));
+import { useState, useEffect } from 'react';
 
 function EmployeeList() {
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    const employees = JSON.parse(localStorage.getItem('employees'));
+    if (employees) {
+      setEmployees(employees);
+    }
+  }, []);
+
   return (
     <section>
-      <button onClick={() => window.location.reload(false)}>
-        Actualiser la page
-      </button>
       <DataTableComponent data={employees} />
     </section>
   );
