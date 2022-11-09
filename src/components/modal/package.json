@@ -1,10 +1,8 @@
 {
   "name": "modalextensionwh-p14",
-  "version": "1.0.0",
-  "description": "A simply and clean modal to form submit",
-  "main": "dist/index",
-"typings": "dist/index",
-
+  "version": "1.0.2",
+  "description": "A simply modal to confirm form",
+  "main": "modal.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
