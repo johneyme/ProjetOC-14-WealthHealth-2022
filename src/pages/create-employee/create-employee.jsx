@@ -28,23 +28,12 @@ function CreateEmployee() {
   });
 
   function handleSubmit() {
-    setNewEmployee({
-      ...newEmployee,
-      firstName: document.getElementById('first-name').value,
-      lastName: document.getElementById('last-name').value,
-      dateOfBirth: document.getElementById('date-of-birth').value,
-      startDate: document.getElementById('start-date').value,
-      street: document.getElementById('street').value,
-      city: document.getElementById('city').value,
-      state: document.getElementById('state').value,
-      zipCode: document.getElementById('zip-code').value,
-      department: document.getElementById('department').value,
-    });
     // Adds the new employee to the global storage array
     setAllEmployees((current) => [...current, newEmployee]);
   }
   useEffect(() => {
     console.log(allEmployees);
+    console.log(newEmployee);
   });
 
   return (
@@ -52,13 +41,43 @@ function CreateEmployee() {
       <h2>Create Employee</h2>
       <form action="#" id="create-employee">
         <label htmlFor="first-name">First Name</label>
-        <input type="text" id="first-name" name="firstName" />
+        <input
+          type="text"
+          id="first-name"
+          name="firstName"
+          onChange={(e) =>
+            setNewEmployee((currValue) => ({
+              ...currValue,
+              firstName: e.target.value,
+            }))
+          }
+        />
 
         <label htmlFor="last-name">Last Name</label>
-        <input type="text" id="last-name" name="lastName" />
+        <input
+          type="text"
+          id="last-name"
+          name="lastName"
+          onChange={(e) =>
+            setNewEmployee((currValue) => ({
+              ...currValue,
+              lastName: e.target.value,
+            }))
+          }
+        />
 
         <label htmlFor="date-of-birth">Date of Birth</label>
-        <input id="date-of-birth" type="text" name="dateOfBirth" />
+        <input
+          id="date-of-birth"
+          type="text"
+          name="dateOfBirth"
+          onChange={(e) =>
+            setNewEmployee((currValue) => ({
+              ...currValue,
+              dateOfBirth: e.target.value,
+            }))
+          }
+        />
 
         <label htmlFor="start-date">Start Date</label>
 
@@ -66,17 +85,47 @@ function CreateEmployee() {
           id="start-date"
           selected={startDate}
           name="startDate"
-          onChange={(date) => setStartDate(date)}
+          dateFormat="yyyy/MM/dd"
+          onSelect={(e) =>
+            setStartDate(
+              e,
+
+              setNewEmployee((currValue) => ({
+                ...currValue,
+                startDate: document.getElementById('start-date').value,
+              }))
+            )
+          }
         />
 
         <fieldset className="address">
           <legend>Address</legend>
 
           <label htmlFor="street">Street</label>
-          <input id="street" type="text" name="street" />
+          <input
+            id="street"
+            type="text"
+            name="street"
+            onChange={(e) =>
+              setNewEmployee((currValue) => ({
+                ...currValue,
+                street: e.target.value,
+              }))
+            }
+          />
 
           <label htmlFor="city">City</label>
-          <input id="city" type="text" name="city" />
+          <input
+            id="city"
+            type="text"
+            name="city"
+            onChange={(e) =>
+              setNewEmployee((currValue) => ({
+                ...currValue,
+                city: e.target.value,
+              }))
+            }
+          />
 
           <label htmlFor="state">State</label>
           <DropdownSelect
@@ -84,10 +133,26 @@ function CreateEmployee() {
             id="state"
             array={states}
             stateData={true}
+            change={(e) =>
+              setNewEmployee((currValue) => ({
+                ...currValue,
+                state: e.target.value,
+              }))
+            }
           />
 
           <label htmlFor="zip-code">Zip Code</label>
-          <input id="zip-code" type="number" name="zipCode" />
+          <input
+            id="zip-code"
+            type="number"
+            name="zipCode"
+            onChange={(e) =>
+              setNewEmployee((currValue) => ({
+                ...currValue,
+                zipCode: e.target.value,
+              }))
+            }
+          />
         </fieldset>
 
         <label htmlFor="department">Department</label>
@@ -96,6 +161,12 @@ function CreateEmployee() {
           id="department"
           array={departments}
           stateData={false}
+          change={(e) =>
+            setNewEmployee((currValue) => ({
+              ...currValue,
+              department: e.target.value,
+            }))
+          }
         />
       </form>
 
