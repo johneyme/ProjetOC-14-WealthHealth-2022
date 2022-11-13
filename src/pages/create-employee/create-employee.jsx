@@ -32,7 +32,6 @@ function CreateEmployee() {
     setAllEmployees((current) => [...current, newEmployee]);
   }
   useEffect(() => {
-    console.log(allEmployees);
     console.log(newEmployee);
   });
 
@@ -42,6 +41,7 @@ function CreateEmployee() {
       <form action="#" id="create-employee">
         <label htmlFor="first-name">First Name</label>
         <input
+          className="input-create"
           type="text"
           id="first-name"
           name="firstName"
@@ -55,6 +55,7 @@ function CreateEmployee() {
 
         <label htmlFor="last-name">Last Name</label>
         <input
+          className="input-create"
           type="text"
           id="last-name"
           name="lastName"
@@ -68,6 +69,7 @@ function CreateEmployee() {
 
         <label htmlFor="date-of-birth">Date of Birth</label>
         <input
+          className="input-create"
           id="date-of-birth"
           type="text"
           name="dateOfBirth"
@@ -82,17 +84,24 @@ function CreateEmployee() {
         <label htmlFor="start-date">Start Date</label>
 
         <DatePicker
+          className="input-create"
           id="start-date"
           selected={startDate}
           name="startDate"
-          dateFormat="yyyy/MM/dd"
+          dateFormat="dd/MM/yyyy"
+          peekNextMonth
+          showMonthDropdown
+          showYearDropdown
+          dropdownMode="select"
           onSelect={(e) =>
             setStartDate(
               e,
-
+              console.log(e),
               setNewEmployee((currValue) => ({
                 ...currValue,
-                startDate: document.getElementById('start-date').value,
+                startDate: `${e.getDate()}/${
+                  e.getMonth() + 1
+                }/${e.getFullYear()}`,
               }))
             )
           }
@@ -103,6 +112,7 @@ function CreateEmployee() {
 
           <label htmlFor="street">Street</label>
           <input
+            className="input-create"
             id="street"
             type="text"
             name="street"
@@ -116,6 +126,7 @@ function CreateEmployee() {
 
           <label htmlFor="city">City</label>
           <input
+            className="input-create"
             id="city"
             type="text"
             name="city"
@@ -129,6 +140,7 @@ function CreateEmployee() {
 
           <label htmlFor="state">State</label>
           <DropdownSelect
+            styleString="select-create"
             name="state"
             id="state"
             array={states}
@@ -143,6 +155,7 @@ function CreateEmployee() {
 
           <label htmlFor="zip-code">Zip Code</label>
           <input
+            className="input-create"
             id="zip-code"
             type="number"
             name="zipCode"
@@ -157,6 +170,7 @@ function CreateEmployee() {
 
         <label htmlFor="department">Department</label>
         <DropdownSelect
+          styleString="select-create"
           name="department"
           id="department"
           array={departments}

@@ -8,14 +8,14 @@ const EmployeesProvider = (props) => {
 
   const [allEmployees, setAllEmployees] = useState([
     {
-      firstName: 'Test',
-      lastName: 'User00',
-      dateOfBirth: '2020-10-15',
-      startDate: '2020-10-15',
-      street: 'A Random Street',
-      city: 'Random City',
-      state: 'AL',
-      zipCode: '12345',
+      firstName: 'Test-Prénom',
+      lastName: 'Test-Nom',
+      dateOfBirth: '01/01/2010',
+      startDate: '01/09/2022',
+      street: '15 Street Bridge',
+      city: 'Denver',
+      state: 'CO',
+      zipCode: '80012',
       department: 'Sales',
     },
   ]);

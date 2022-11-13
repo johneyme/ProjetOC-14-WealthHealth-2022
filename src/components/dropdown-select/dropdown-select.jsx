@@ -1,9 +1,9 @@
 import './dropdown-select.css';
 
-function DropdownSelect({ name, id, array, stateData, change }) {
+function DropdownSelect({ name, id, array, stateData, change, styleString }) {
   if (stateData === true) {
     return (
-      <select name={name} id={id} onChange={change}>
+      <select className={styleString} name={name} id={id} onChange={change}>
         {array.map((elm) => (
           <option key={`${id}-${elm.abbreviation}`} value={elm.abbreviation}>
             {elm.name}
@@ -13,7 +13,7 @@ function DropdownSelect({ name, id, array, stateData, change }) {
     );
   } else {
     return (
-      <select name={name} id={id} onChange={change}>
+      <select className={styleString} name={name} id={id} onChange={change}>
         {array.map((elm) => (
           <option key={`${id}-${elm}`}>{elm}</option>
         ))}
