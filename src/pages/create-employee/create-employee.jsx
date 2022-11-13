@@ -32,7 +32,7 @@ function CreateEmployee() {
     setAllEmployees((current) => [...current, newEmployee]);
   }
   useEffect(() => {
-    console.log(newEmployee);
+    console.log(newEmployee, allEmployees);
   });
 
   return (
