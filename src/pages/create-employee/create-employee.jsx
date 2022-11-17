@@ -7,8 +7,20 @@ import { departments } from '../../data/department';
 
 import DatePicker from 'react-datepicker';
 import Modal from 'modal-extension-wh-p14';
+//import Modal from '../../components/modal/modal';
 import { employeesContext } from '../../utils/employeesProvider';
 import DropdownSelect from '../../components/dropdown-select/dropdown-select';
+
+/**
+ *
+ * Create employee page who display a form to push it on employee list
+ *
+ * @provider allEmployees
+ *
+ * @function handleSubmit to push newEmployee in allEmployee
+ *
+ * @returns {CreateEmployee}
+ */
 
 function CreateEmployee() {
   const [startDate, setStartDate] = useState(new Date());
