@@ -13,8 +13,9 @@ header {
     display: flex;
 }
 
-header img {
+.logo-hrnet {
     width: 100px;
+    height: 100%;
 }
 
 nav {

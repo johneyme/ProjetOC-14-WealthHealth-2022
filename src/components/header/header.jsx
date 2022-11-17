@@ -6,7 +6,7 @@ function Header() {
   return (
     <header>
       <div className="header-title">
-        <img src={logoWH} alt="logo HRnet"></img>
+        <img src={logoWH} alt="logo HRnet" className="logo-hrnet"></img>
         <h1>HRnet</h1>
       </div>
       <nav>
