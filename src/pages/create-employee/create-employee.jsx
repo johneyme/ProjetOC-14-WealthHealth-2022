@@ -6,7 +6,7 @@ import { states } from '../../data/states';
 import { departments } from '../../data/department';
 
 import DatePicker from 'react-datepicker';
-import Modal from '../../components/modal/modal';
+import Modal from 'modal-extension-wh-p14';
 import { employeesContext } from '../../utils/employeesProvider';
 import DropdownSelect from '../../components/dropdown-select/dropdown-select';
 
@@ -32,7 +32,7 @@ function CreateEmployee() {
     setAllEmployees((current) => [...current, newEmployee]);
   }
   useEffect(() => {
-    console.log(newEmployee, allEmployees);
+    console.log(allEmployees);
   });
 
   return (
