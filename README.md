@@ -20,7 +20,7 @@ https://github.com/johneyme/ProjetOC-14-WealthHealth-2022
 ### Prerequisites
 
 - [![yarn-v_1.22.19](https://img.shields.io/badge/yarn-v_1.22.19-orange)](https://docs.npmjs.com/)
-- [![NodeJs-v_18.12.1](https://img.shields.io/badge/NodeJs-v_16.10.0-red)](https://nodejs.org/en/docs/)
+- [![NodeJs-v_18.12.1](https://img.shields.io/badge/NodeJs-v_18.12.1-red)](https://nodejs.org/en/docs/)
 
 - VSCode
 
