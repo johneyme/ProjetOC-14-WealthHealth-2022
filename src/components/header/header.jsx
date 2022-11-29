@@ -4,7 +4,7 @@ import logoWH from '../../assets/logo-wh.png';
 
 function Header() {
   return (
-    <header>
+    <header className="main-header">
       <div className="header-title">
         <img src={logoWH} alt="logo HRnet" className="logo-hrnet"></img>
         <h1>HRnet</h1>

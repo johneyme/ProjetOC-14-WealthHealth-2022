@@ -24,6 +24,7 @@ import DropdownSelect from '../../components/dropdown-select/dropdown-select';
 
 function CreateEmployee() {
   const [startDate, setStartDate] = useState(new Date());
+  const [dateBirth, setDateBirth] = useState(new Date());
   const [isOpen, setIsOpen] = useState(false);
   const { allEmployees, setAllEmployees } = useContext(employeesContext);
 
@@ -80,16 +81,26 @@ function CreateEmployee() {
         />
 
         <label htmlFor="date-of-birth">Date of Birth</label>
-        <input
+        <DatePicker
           className="input-create"
-          id="date-of-birth"
-          type="text"
-          name="dateOfBirth"
-          onChange={(e) =>
-            setNewEmployee((currValue) => ({
-              ...currValue,
-              dateOfBirth: e.target.value,
-            }))
+          id="start-date"
+          selected={dateBirth}
+          name="date-of-birth"
+          dateFormat="dd/MM/yyyy"
+          peekNextMonth
+          showMonthDropdown
+          showYearDropdown
+          dropdownMode="select"
+          onSelect={(e) =>
+            setDateBirth(
+              e,
+              setNewEmployee((currValue) => ({
+                ...currValue,
+                dateOfBirth: `${e.getDate()}/${
+                  e.getMonth() + 1
+                }/${e.getFullYear()}`,
+              }))
+            )
           }
         />
 
